@@ -1,0 +1,258 @@
+.user-select(@param: none){
+    -moz-user-select: @param; 
+    -khtml-user-select: @param; 
+    -webkit-user-select: @param; 
+    -o-user-select: @param; 
+    cursor: default;  
+}
+
+body{
+	background: lightgray;
+	font-family: 'Spicy Rice', cursive;
+	font-size: 20pt;	
+    .user-select;
+    background: url("../img/pattern.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+
+.row{
+	&.panel{
+    	border: 1px solid;
+		margin-top: 25px;
+		padding: 15px;	
+		background-color: white;
+		box-shadow: 0 0 150px black, inset 0 0 25px lightgoldenrodyellow;
+		background: url("../img/back.png");
+		//background-repeat: repeat-x;
+		//background-position: 0 377px;
+		border-radius: 45px;
+		border-bottom-left-radius: 2px;
+		border-bottom-right-radius: 2px;
+		margin-bottom: 2px;
+		height: 430px;
+		overflow: hidden;
+	}
+
+	&.downPanel{
+		min-height: 50px;
+		height: auto;
+		border: 1px solid;
+		padding: 15px;
+		padding-bottom: 10px;
+		background-color: white;
+		box-shadow: 0 0 150px black, inset 0 0 25px lightgoldenrodyellow;
+		border-radius: 20px;
+		border-top-left-radius: 2px;
+		border-top-right-radius: 2px;
+		transition: all 0.65s;
+		margin-bottom: 15px;
+
+		.panel{
+			text-align: center;
+			margin-top: 5px;
+			margin-bottom: 5px;
+			background: rgba(255, 243, 197, 0.5);			
+			padding-top: 5px;
+			border: 1px dashed rgb(0,0,0);
+			border-radius: 10px;
+			min-height: 15px;
+		}
+
+		.questPanel{			
+			background: rgba(255, 243, 197, 0.5);						
+		}
+
+		.perksPanel{			
+			background: rgba(120, 243, 255, 0.125);						
+		}
+	}
+}
+
+.gamecaption{
+	font-family: 'Miltonian', cursive;
+	text-shadow: 0 0 4px black;
+	color: white;
+	font-size: 40pt;
+}
+
+.caption {
+	text-shadow: 0 0 5px black, 0 0 1px black;
+	font-size: 37pt;
+	font-family: 'Spicy Rice', cursive;
+	.user-select;
+}
+
+.value{
+	text-align: center;
+	font-size: 37pt;
+	text-shadow: 0 0 2px black;
+	.user-select;
+	z-index: 5;
+}
+
+.other {	
+    .user-select;
+}
+
+.other .desc{
+	text-align: center;
+	color: black;
+	font-size: 12pt;
+	margin-top: 4px;
+	font-family: 'Arial';
+	font-weight: initial;
+}
+
+.progress{
+	box-shadow: 1px 1px 4px gray;
+	margin-bottom: 0;
+	margin-top: 10px;
+}
+
+.level{	
+	color: lightskyblue;	
+	
+    .user-select;
+    .progress-bar{
+		background-color: lightskyblue;
+	}
+}
+
+.strength{
+	color: rgb(255, 144, 144);
+	.user-select;
+	.progress-bar{
+		background-color: rgb(255, 144, 144);
+	}
+}
+
+.energy{
+	color: lightgreen;
+	.user-select;
+	.progress-bar{
+		background-color: lightgreen;
+		transition: all 0.1s;
+	}
+}
+
+.clicks{
+	color: rgb(245, 245, 245);
+	.progress-bar{
+		background-color: rgb(245, 245, 245);
+	}
+}
+
+.flying{
+	position: absolute;	
+	width: 50px;
+	text-align: center;
+	left: 190px;
+	top: 200px;
+	color: white;
+	text-shadow: 0 0 4px black;
+	font-size: 30pt;
+	.user-select; 
+    transition: all 2s, opacity 2.2s ease-in;
+    z-index: 100;
+}
+
+.shine{
+	background: url("../img/rays.png");
+	width: 220px;
+	height: 220px;
+	position: absolute;	
+	opacity: 0;
+	transition: all 1s;
+	transform: rotate(0deg);
+
+	&.animation{
+		opacity: 1;
+		transform: rotate(90deg);				
+	}
+
+	&.fade{
+		opacity: 0;
+		transform: rotate(180deg);
+	}
+}
+
+.tooltip{	
+	.tooltip-inner{
+		border: 2px dashed #F5DEB3;
+		max-width: 300px;
+		div.big{
+			border-bottom: 2px dotted #F5DEB3;
+    		font-size: 11pt;
+    		margin-bottom: 5px;
+    		padding-bottom: 5px;
+		}
+		div.bonus{
+			color: lightgreen;
+		}
+		div.reward{
+			color: lightskyblue;
+		}
+		div.rewardCaption{
+			border-top: 2px dotted #F5DEB3;
+			margin-top: 4px;
+		}
+	}
+	.tooltip-arrow{
+		display: none;
+	}
+}
+
+.questPanel{
+	.quest{		
+	    border: 1px dotted gray;
+	    border-radius: 2px;
+	    box-shadow: 0 0 4px black;
+	    display: inline-block;
+	    font-size: 11pt;	    
+	    margin: 5px;
+	    margin-bottom: 15px;
+	    text-align: center;
+	    min-width: 80px;
+	    max-width: 180px;	    
+	    transition: all 0.5s, opacity 1s;
+	    cursor: pointer;
+	    background-color: white;
+	    
+	    &:hover{	    		    		    	
+	    	box-shadow: 0 0 8px black;	    	
+	    	.type{	    		
+	    		background-color: #FFD700;
+	    	}
+	    }
+
+	    .progress{
+	    	bottom: 0;
+    		height: 10px;    	
+    		margin: auto auto 5px;
+    		width: 80%; 
+    		.progress-bar{
+    			background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, rgba(0, 0, 0, 0.1) 25%, rgba(0, 0, 0, 0.1) 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.25) 75%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.1));
+    			background-size: 20px 20px;
+    		}   		
+	    }
+
+	    .type{	    	
+	    	background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, rgba(0, 0, 0, 0.1) 25%, rgba(0, 0, 0, 0.1) 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.25) 75%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.1));
+		    border-bottom: 1px solid #000000;		    
+		    font-weight: normal;
+		    font-family: 'Miltonian',cursive;
+    		font-size: 14pt;		    
+    		transition: all 0.5s, opacity 1s;
+    		padding-left: 4px;
+    		padding-right: 4px;
+	    }
+
+	    .name{
+	    	padding-left: 4px;
+	    	padding-right: 4px;
+	    }
+
+	    i{
+	    	margin: auto auto 5px;
+	    }
+	}
+}
